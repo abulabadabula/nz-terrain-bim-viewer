@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { useStore } from 'react-redux';
 import * as THREE from 'three';
-import { RootState } from '../app/store';
+import { type RootState } from '../app/store'
 
 export default function BimModelLoader() {
   const store = useStore<RootState>();
