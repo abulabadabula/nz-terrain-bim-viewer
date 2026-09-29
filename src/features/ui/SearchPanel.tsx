@@ -22,19 +22,20 @@ export default function SearchPanel() {
   };
 
   return (
-    <div className="flex gap-2 bg-gray-800/90 backdrop-blur p-3 rounded-lg shadow-xl border border-gray-700">
+    // 移除了 shadow-xl 和 backdrop-blur，将 w-72 改为 w-full
+    <div className="flex gap-2 bg-gray-800 p-3 rounded-lg border border-gray-700">
       <input 
         type="text"
-        placeholder="输入新西兰地址 (如: Queen St, Auckland)..." 
+        placeholder="输入新西兰地址..." 
         value={inputVal} 
         onChange={(e) => setInputVal(e.target.value)}
         onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
-        className="bg-gray-900 border border-gray-600 text-white px-3 py-2 rounded w-72 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="bg-gray-900 border border-gray-600 text-white px-3 py-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
       />
       <button 
         onClick={handleSearch} 
         disabled={isLoading}
-        className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded font-medium disabled:opacity-50 transition-colors"
+        className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded font-medium disabled:opacity-50 transition-colors text-sm whitespace-nowrap"
       >
         {isLoading ? '定位中...' : '定位'}
       </button>
